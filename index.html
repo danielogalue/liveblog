@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Blog Replica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">ALJAZEERA <span>LIVE</span></div>
+      <nav class="top-links">
+        <a href="#">Home</a>
+        <a href="#">Middle East</a>
+        <a href="#">Live</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <article class="content">
+        <p class="kicker">LIVE UPDATES · 21 APR 2026</p>
+        <h1>Iran war live: Tehran shuns talks, Trump says US blockade to remain</h1>
+        <p class="intro">
+          Diplomatic efforts to end the US-Israel war on Iran remain uncertain as Tehran says it will not negotiate under the
+          “shadow of threats”.
+        </p>
+
+        <figure class="hero">
+          <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80" alt="City skyline" />
+          <figcaption>People gather in Tehran amid uncertainty over ceasefire talks.</figcaption>
+        </figure>
+
+        <section id="updates" class="updates"></section>
+      </article>
+
+      <aside class="sidebar">
+        <section class="widget">
+          <h2>Latest posts</h2>
+          <ul id="latest-list"></ul>
+        </section>
+
+        <section class="widget">
+          <h2>Key points</h2>
+          <ul>
+            <li>Talks in Islamabad remain in doubt.</li>
+            <li>US says naval blockade remains in effect.</li>
+            <li>Iran says no negotiations under threats.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
