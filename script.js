@@ -1,45 +1,110 @@
-const updates = [
-  {
-    time: '20 minutes ago',
-    title: 'Iran says it rejects talks under military pressure',
-    body: 'Iranian officials reiterated that negotiations cannot proceed while the United States keeps naval pressure in place around regional ports.'
+const pageData = {
+  title: 'Iran war live: Tehran shuns talks, Trump says US blockade to remain',
+  summary:
+    'Diplomacy remains uncertain as Tehran rejects negotiations under military pressure and Washington says maritime restrictions will continue.',
+  authors: 'By Urooba Jamal and Federica Marsi',
+  publishedOn: 'Published On 21 Apr 2026',
+  hero: {
+    image:
+      'https://images.unsplash.com/photo-1571847140471-1d7766e825ea?auto=format&fit=crop&w=1600&q=80',
+    caption: 'US President Donald Trump speaks during an update on Iran talks in Washington, DC.'
   },
-  {
-    time: '1 hour ago',
-    title: 'Trump confirms ceasefire window has been extended',
-    body: 'The White House says the ceasefire extension is designed to allow mediators time to collect and review a formal proposal.'
-  },
-  {
-    time: '2 hours ago',
-    title: 'Diplomatic meeting in Pakistan enters uncertain phase',
-    body: 'Regional delegations arrived for follow-up meetings, but sources suggest participation remains unresolved and deadlines are tight.'
-  },
-  {
-    time: '3 hours ago',
-    title: 'Shipping insurers maintain high-risk posture in Gulf',
-    body: 'Insurance providers have not adjusted rates as maritime operators continue to assess possible escalation around Hormuz traffic lanes.'
-  },
-  {
-    time: '5 hours ago',
-    title: 'Analysts warn of fragile pause despite lowered hostilities',
-    body: 'Observers caution that the current pause remains politically delicate unless both sides lock in a monitored diplomatic framework.'
-  }
-];
+  topics: ['US-Israel war on Iran', 'Live updates', 'Explainers', 'Analysis', 'Videos', 'Interactive maps'],
+  highlights: [
+    'Trump says the US will maintain a naval blockade while talks continue.',
+    'Tehran says no direct negotiation can happen under military threats.',
+    'Mediators in Pakistan are still trying to secure full participation.'
+  ],
+  updates: [
+    {
+      time: '28 minutes ago',
+      title: 'Iran rejects “pressure diplomacy” in latest statement',
+      text: 'Iranian negotiators said indirect channels remain open but insisted that direct talks are off the table while the blockade remains active.'
+    },
+    {
+      time: '1 hour ago',
+      title: 'Trump says maritime restrictions stay in force for now',
+      text: 'In remarks from Washington, Trump said restrictions are part of the current framework and will not be removed before a concrete agreement.'
+    },
+    {
+      time: '2 hours ago',
+      title: 'Talks in Pakistan continue amid conflicting signals',
+      text: 'Diplomatic teams held a second round of consultations as mediators worked to align terms for a longer ceasefire extension.'
+    },
+    {
+      time: '4 hours ago',
+      title: 'Shipping groups report cautious movement near Hormuz',
+      text: 'Traffic in the Gulf remains below normal levels as commercial operators continue security assessments for high-risk routes.'
+    }
+  ],
+  related: [
+    'What we know about the US maritime blockade',
+    'Can indirect diplomacy prevent escalation?',
+    'Timeline: Key events in the latest Iran war crisis'
+  ]
+};
 
-const updatesContainer = document.getElementById('updates');
-const latestList = document.getElementById('latest-list');
-
-for (const item of updates) {
-  const card = document.createElement('article');
-  card.className = 'update';
-  card.innerHTML = `
-    <time>${item.time}</time>
-    <h3>${item.title}</h3>
-    <p>${item.body}</p>
-  `;
-  updatesContainer.appendChild(card);
-
-  const latestItem = document.createElement('li');
-  latestItem.textContent = `${item.time}: ${item.title}`;
-  latestList.appendChild(latestItem);
+function renderTopicRail(topics) {
+  const rail = document.getElementById('topic-rail');
+  topics.forEach((topic, index) => {
+    const link = document.createElement('a');
+    link.href = '#';
+    link.textContent = topic;
+    if (index === 0) link.classList.add('active');
+    rail.appendChild(link);
+  });
 }
+
+function renderStory(data) {
+  document.getElementById('story-title').textContent = data.title;
+  document.getElementById('story-summary').textContent = data.summary;
+  document.getElementById('story-authors').textContent = data.authors;
+  document.getElementById('story-date').textContent = data.publishedOn;
+  document.getElementById('hero-image').src = data.hero.image;
+  document.getElementById('hero-caption').textContent = data.hero.caption;
+
+  const highlights = document.getElementById('highlight-list');
+  data.highlights.forEach((item) => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    highlights.appendChild(li);
+  });
+}
+
+function renderTimeline(updates) {
+  const timeline = document.getElementById('timeline');
+  updates.forEach((post) => {
+    const article = document.createElement('article');
+    article.className = 'entry';
+    article.innerHTML = `
+      <time>${post.time}</time>
+      <h2>${post.title}</h2>
+      <p>${post.text}</p>
+    `;
+    timeline.appendChild(article);
+  });
+}
+
+function renderSidebar(data) {
+  const latestList = document.getElementById('latest-list');
+  data.updates.forEach((post) => {
+    const li = document.createElement('li');
+    li.textContent = `${post.time}: ${post.title}`;
+    latestList.appendChild(li);
+  });
+
+  const relatedList = document.getElementById('related-list');
+  data.related.forEach((item) => {
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = '#';
+    link.textContent = item;
+    li.appendChild(link);
+    relatedList.appendChild(li);
+  });
+}
+
+renderTopicRail(pageData.topics);
+renderStory(pageData);
+renderTimeline(pageData.updates);
+renderSidebar(pageData);
