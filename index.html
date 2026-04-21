@@ -3,51 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Live Blog Replica</title>
+    <title>Iran war live | Replica</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand">ALJAZEERA <span>LIVE</span></div>
-      <nav class="top-links">
-        <a href="#">Home</a>
-        <a href="#">Middle East</a>
-        <a href="#">Live</a>
+    <header class="site-header">
+      <div class="header-main container">
+        <button class="menu" aria-label="Open menu">☰</button>
+        <div class="logo">ALJAZEERA</div>
+        <div class="header-actions">Sign up</div>
+      </div>
+      <nav class="topic-strip">
+        <div class="container topic-scroll">
+          <a class="topic active" href="#">US-Israel war on Iran</a>
+          <a class="topic" href="#">Live updates</a>
+          <a class="topic" href="#">US-Iran talks</a>
+          <a class="topic" href="#">Strait of Hormuz traffic</a>
+          <a class="topic" href="#">Iran war’s big winners</a>
+        </div>
       </nav>
     </header>
 
-    <main class="layout">
-      <article class="content">
-        <p class="kicker">LIVE UPDATES · 21 APR 2026</p>
-        <h1>Iran war live: Tehran shuns talks, Trump says US blockade to remain</h1>
-        <p class="intro">
-          Diplomatic efforts to end the US-Israel war on Iran remain uncertain as Tehran says it will not negotiate under the
-          “shadow of threats”.
+    <main class="container page">
+      <article class="liveblog">
+        <p class="live-label"><span class="dot"></span>Live updates</p>
+        <h1>Iran war live: Trump extends ceasefire as Pakistan talks in disarray</h1>
+        <p class="standfirst">
+          Iran says it will not accept negotiations “under the shadow of threats” as Trump promises to continue blockade of
+          Iranian ports.
         </p>
 
+        <div class="meta-row">
+          <p>By <strong>Urooba Jamal</strong> and <strong>Federica Marsi</strong></p>
+          <p>Published On <strong>21 Apr 2026</strong></p>
+        </div>
+
         <figure class="hero">
-          <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80" alt="City skyline" />
-          <figcaption>People gather in Tehran amid uncertainty over ceasefire talks.</figcaption>
+          <img src="https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1400&q=80" alt="Donald Trump in Oval Office" />
+          <figcaption>Trump says the ceasefire is extended while talks remain uncertain.</figcaption>
         </figure>
 
-        <section id="updates" class="updates"></section>
+        <div class="key-bullets">
+          <ul>
+            <li>President Donald Trump says the US is extending the ceasefire with Iran until discussions are concluded.</li>
+            <li>Tehran says it will not negotiate under the “shadow of threats” or under a US naval blockade.</li>
+          </ul>
+        </div>
+
+        <section id="updates" class="updates" aria-label="Live timeline"></section>
       </article>
 
       <aside class="sidebar">
-        <section class="widget">
-          <h2>Latest posts</h2>
-          <ul id="latest-list"></ul>
+        <section class="side-card">
+          <h2>Latest updates</h2>
+          <ol id="latest-list"></ol>
         </section>
-
-        <section class="widget">
-          <h2>Key points</h2>
+        <section class="side-card">
+          <h2>Related</h2>
           <ul>
-            <li>Talks in Islamabad remain in doubt.</li>
-            <li>US says naval blockade remains in effect.</li>
-            <li>Iran says no negotiations under threats.</li>
+            <li><a href="#">What could extend ceasefire talks?</a></li>
+            <li><a href="#">Explainer: How naval blockades work</a></li>
+            <li><a href="#">Analysis: Diplomatic pressure points</a></li>
           </ul>
         </section>
       </aside>
