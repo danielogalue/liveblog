@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al Jazeera Liveblog Replica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__main wrapper">
+        <button class="icon-btn" aria-label="Open menu">☰</button>
+        <p class="brand">ALJAZEERA</p>
+        <button class="icon-btn" aria-label="Open search">⌕</button>
+      </div>
+      <nav class="header__nav wrapper" aria-label="Primary">
+        <a href="#">News</a>
+        <a href="#">Video</a>
+        <a href="#">Live</a>
+        <a href="#">Opinion</a>
+        <a href="#">Podcasts</a>
+      </nav>
+    </header>
+
+    <div class="section-rail">
+      <div class="wrapper rail-scroll" id="topic-rail"></div>
+    </div>
+
+    <main class="wrapper layout">
+      <article class="main-col">
+        <p class="live-chip"><span></span>LIVE UPDATES</p>
+        <h1 id="story-title"></h1>
+        <p id="story-summary" class="summary"></p>
+
+        <div class="story-meta">
+          <p id="story-authors"></p>
+          <p id="story-date"></p>
+        </div>
+
+        <figure class="hero">
+          <img id="hero-image" alt="Liveblog hero" />
+          <figcaption id="hero-caption"></figcaption>
+        </figure>
+
+        <section class="highlights">
+          <h2>Key points</h2>
+          <ul id="highlight-list"></ul>
+        </section>
+
+        <section class="timeline" id="timeline" aria-label="Liveblog timeline"></section>
+      </article>
+
+      <aside class="side-col">
+        <section class="panel">
+          <h3>Latest posts</h3>
+          <ol id="latest-list"></ol>
+        </section>
+        <section class="panel">
+          <h3>Related coverage</h3>
+          <ul id="related-list"></ul>
+        </section>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
